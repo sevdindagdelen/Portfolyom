@@ -1,0 +1,444 @@
+/* Genel Stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth; /* Yumuşak kaydırma için */
+}
+
+/* Header Stili */
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+/* Ana Sayfa Stili */
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 5%;
+    background: #fff;  /* Arka planı beyaz yaptık */
+    color: #333;      /* Yazı rengini koyu yaptık */
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 700px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    line-height: 1.2;
+}
+
+.about-description p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-image img {
+    width: 400px;
+    border-radius: 50%;  /* Tam yuvarlak yapalım */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    border: 8px solid #fff;  /* Beyaz çerçeve ekleyelim */
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f0f4ff;
+    border-radius: 50%;  /* Arka planı da yuvarlak yapalım */
+    z-index: -1;
+    transform: rotate(-3deg) scale(0.95);  /* Hafif döndürülmüş arka plan */
+}
+
+/* Hover efekti için */
+.hero-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.cta-button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,123,255,0.2);
+}
+
+/* Bölüm Başlıkları için genel stil */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Hakkımda Stili */
+#about {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.skill-category h4 {
+    color: #007bff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.skill-category ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.skill-category ul li {
+    background: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.skill-category ul li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Projeler Stili */
+#projects {
+    padding: 5rem 5%;
+    background: #f9f9f9;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease; /* Tüm geçişler için animasyon */
+    cursor: pointer; /* İmleç şeklini el işaretine çevir */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Hover'da %5 büyüme */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Daha belirgin gölge */
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover img {
+    opacity: 0.9; /* Hover'da resmi biraz şeffaflaştır */
+}
+
+.project-card h3, .project-card p {
+    padding: 1rem;
+}
+
+/* İletişim Stili */
+#contact {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.contact-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: #f0f4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.contact-icon i {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.contact-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-card a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-card a:hover {
+    color: #0056b3;
+}
+
+/* CV butonu için daha oval stil */
+.cv-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #28a745;
+    color: #fff !important;
+    border-radius: 25px; /* Daha oval görünüm için */
+    transition: all 0.3s ease;
+}
+
+.cv-button:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(40,167,69,0.2);
+}
+
+/* Proje kartı içindeki linkler için stil */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.project-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.project-links a i {
+    font-size: 1.2rem;
+}
+
+.project-links a:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+.social-section {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.social-section h3 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: #333;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* Footer Stili */
+footer {
+    text-align: center;
+    padding: 2rem;
+    
+    color: #fff;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-image img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    #home {
+        padding: 4rem 5%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-description p {
+        font-size: 1.1rem;
+    }
+
+    .hero-image img {
+        width: 250px;
+        border-width: 6px;  /* Mobilde daha ince çerçeve */
+    }
+
+    .nav-links {
+        display: none;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-content img {
+        width: 200px;
+        margin-bottom: 2rem;
+    }
+    
+    .skills-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 100%;
+    }
+}
+
+/* Proje kartı link stilini düzelt */
+a.project-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+} 
